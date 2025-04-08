@@ -53,6 +53,14 @@ html {
 
 body {
     background-color: $background;
+    touch-action: manipulation;
+}
+
+html,
+body {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .container {

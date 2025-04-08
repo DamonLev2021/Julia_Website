@@ -4,3 +4,4 @@ import "../sass/style.scss";
 
 import "../js/language.js";
 import "../js/burger.js";
+import "../js/slider.js";

@@ -3,13 +3,14 @@
 import en from "../locales/locale-en.json";
 import ru from "../locales/locale-ru.json";
 
+import { swiper } from "./slider.js";
+
 const translatation = { en, ru };
 
-const sections = ["burger", "header", "nav", "about"];
+const sections = ["burger", "header", "nav", "about", "portfolio", "prices"];
 
 export function translatePage(lang) {
     const obj = translatation[lang];
-    console.log(lang);
     sections.forEach((el) => {
         if (el == "header") {
             const title = document.querySelector(`.${el}__items`).childNodes;
@@ -43,6 +44,34 @@ export function translatePage(lang) {
                     item.innerText = obj[el]["description"];
                 else if (item.className == `${el}__photo`)
                     item.src = obj[el]["photo"];
+            });
+        } else if (el == "portfolio") {
+            const title = document.querySelector(`.${el}__title`).childNodes;
+            title.forEach((text) => {
+                if (text.className == "title_h2")
+                    text.innerText = obj[el]["title"];
+            });
+            const slider = document.querySelector(".swiper-wrapper");
+
+            if (slider && slider.children.length > 0) {
+                slider.replaceChildren();
+            }
+
+            for (let i = 0; i < obj[el]["photos"].length; i++) {
+                const slide = document.createElement("div");
+                slide.classList.add("swiper-slide");
+                const photo = document.createElement("img");
+                photo.src = `/src/img/slide/${obj[el]["photos"][i]}`;
+                slide.appendChild(photo);
+                slider.appendChild(slide);
+            }
+
+            swiper.update();
+        } else if (el == "prices") {
+            const title = document.querySelector(`.${el}__title`).childNodes;
+            title.forEach((text) => {
+                if (text.className == "title_h2")
+                    text.innerText = obj[el]["title"];
             });
         }
     });
