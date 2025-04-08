@@ -1,0 +1,8 @@
+@use "/src/sass/base/variables.scss" as *;
+
+@mixin background-gradient {
+    background: $color-title;
+    background-clip: inherit;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

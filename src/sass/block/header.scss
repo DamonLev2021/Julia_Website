@@ -1,0 +1,45 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.header {
+    padding-top: 120px;
+    padding-bottom: 20px;
+    background: url("/src/img/photo_bg.jpeg") center center / cover no-repeat;
+    &__items {
+        margin: 20px 0;
+    }
+    &__icons {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+        justify-content: flex-start;
+        align-items: center;
+        span {
+            font-size: 20px;
+            color: $color-text;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        &__icons {
+            gap: 15px;
+            span {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .header {
+        padding-top: 200px;
+        &__icons {
+            margin-top: 30px;
+            gap: 48px;
+            span {
+                font-size: 32px;
+            }
+        }
+    }
+}

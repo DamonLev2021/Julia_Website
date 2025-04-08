@@ -1,0 +1,103 @@
+@use "/src/sass/base/variables.scss" as *;
+@use "/src/sass/base/mixins.scss" as *;
+
+.nav {
+    position: fixed;
+    padding: 20px 0;
+    width: 100%;
+    background: rgba($color: $background, $alpha: 0.6);
+    &__items {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+        cursor: pointer;
+        span {
+            width: 40px;
+            border: 1px solid $color-text;
+        }
+    }
+    &__logo {
+        width: 107px;
+        height: 60px;
+        cursor: pointer;
+    }
+    &__lang {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $color-text;
+        cursor: pointer;
+        span {
+            font-size: 20px;
+        }
+    }
+    &__menu {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .nav {
+        &__burger {
+            // visibility: hidden;
+            display: none;
+        }
+        &__menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            cursor: pointer;
+        }
+        &__item {
+            @include background-gradient;
+            font-family: "Marck Script", sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            font-style: normal;
+            line-height: normal;
+        }
+        &__item:hover {
+            font-size: 28px;
+            text-decoration: overline;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .nav {
+        &__logo {
+            width: 200px;
+            height: 100px;
+        }
+        &__menu {
+            gap: 80px;
+        }
+        &__item {
+            font-size: 36px;
+        }
+        &__item:hover {
+            font-size: 40px;
+        }
+        &__lang {
+            span {
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .nav {
+        &__menu {
+            gap: 120px;
+        }
+    }
+}
