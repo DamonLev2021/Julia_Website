@@ -5,7 +5,7 @@ import ru from "../locales/locale-ru.json";
 
 const translatation = { en, ru };
 
-const sections = ["burger", "header", "nav"];
+const sections = ["burger", "header", "nav", "about"];
 
 export function translatePage(lang) {
     const obj = translatation[lang];
@@ -27,6 +27,23 @@ export function translatePage(lang) {
             for (let i = 0; i < links.length; i++) {
                 links[i].innerText = obj["nav"]["items"][i];
             }
+        } else if (el == "about") {
+            const title = document.querySelector(`.${el}__title`).childNodes;
+            const content = document.querySelector(
+                `.${el}__content`,
+            ).childNodes;
+
+            title.forEach((text) => {
+                if (text.className == "title_h2")
+                    text.innerText = obj[el]["title"];
+            });
+
+            content.forEach((item) => {
+                if (item.className == `${el}__text`)
+                    item.innerText = obj[el]["description"];
+                else if (item.className == `${el}__photo`)
+                    item.src = obj[el]["photo"];
+            });
         }
     });
 }

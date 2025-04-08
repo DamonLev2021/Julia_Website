@@ -1,0 +1,14 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.line {
+    width: 100px;
+    border: 2px solid $color-text;
+    border-radius: 4px;
+}
+
+@media screen and (min-width: 768px) {
+    .line {
+        width: 150px;
+        border-radius: 8px;
+    }
+}

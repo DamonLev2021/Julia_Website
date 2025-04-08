@@ -31,11 +31,17 @@
     .title_h1 {
         font-size: 48px;
     }
+    .title_h2 {
+        font-size: 36px;
+    }
 }
 
 @media screen and (min-width: 1200px) {
     .title_h1 {
         font-size: 60px;
+    }
+    .title_h2 {
+        font-size: 48px;
     }
     .title_h3 {
         font-size: 36px;
