@@ -1,10 +1,11 @@
 import Swiper from "swiper";
-import { Autoplay, EffectCoverflow } from "swiper/modules";
+import { Autoplay, EffectCoverflow, Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
 
-Swiper.use([Autoplay, EffectCoverflow]);
+Swiper.use([Autoplay, EffectCoverflow, Navigation]);
 
 export const swiper = new Swiper(".swiper", {
     direction: "horizontal",
@@ -39,4 +40,10 @@ export const swiper = new Swiper(".swiper", {
             slidesPerView: 3, // Показывать 3 слайда
         },
     },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
 });
+
+swiper.autoplay.start();
