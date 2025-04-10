@@ -7,7 +7,15 @@ import { swiper } from "./slider.js";
 
 const translatation = { en, ru };
 
-const sections = ["burger", "header", "nav", "about", "portfolio", "prices"];
+const sections = [
+    "burger",
+    "header",
+    "nav",
+    "about",
+    "portfolio",
+    "prices",
+    "footer",
+];
 
 export function translatePage(lang) {
     const obj = translatation[lang];
@@ -23,8 +31,8 @@ export function translatePage(lang) {
             for (let i = 0; i < links.length; i++) {
                 links[i].innerText = obj[el]["items"][i];
             }
-        } else if (el == "burger") {
-            const links = document.querySelectorAll(`.burger__item`);
+        } else if (el == "burger" || el == "footer") {
+            const links = document.querySelectorAll(`.${el}__item`);
             for (let i = 0; i < links.length; i++) {
                 links[i].innerText = obj["nav"]["items"][i];
             }

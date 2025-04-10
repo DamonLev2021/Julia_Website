@@ -2,6 +2,7 @@
 @use "/src/sass/base/mixins.scss" as *;
 
 .nav {
+    z-index: 3;
     position: fixed;
     padding: 20px 0;
     width: 100%;
