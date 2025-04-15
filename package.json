@@ -1,20 +1,28 @@
 {
-  "name": "julia_levkovych",
-  "version": "1.0.0",
-  "description": "WebSite for photographer",
-  "main": "postcss.config.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Dmitry Levkovych",
-  "license": "ISC",
-  "devDependencies": {
-    "postcss-pxtorem": "^6.1.0",
-    "sass": "^1.86.3",
-    "vite": "^6.2.5"
-  },
-  "dependencies": {
-    "purecss": "^3.0.0",
-    "swiper": "^11.2.6"
-  }
+    "name": "julia_levkovych",
+    "version": "1.0.0",
+    "description": "WebSite for photographer",
+    "main": "postcss.config.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DamonLev2021/Julia_Website"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "vite build",
+        "preview": "vite preview",
+        "deploy": "gh-pages -d dist"
+    },
+    "author": "Dmitry Levkovych",
+    "license": "ISC",
+    "devDependencies": {
+        "gh-pages": "^6.3.0",
+        "postcss-pxtorem": "^6.1.0",
+        "sass": "^1.86.3",
+        "vite": "^6.2.5"
+    },
+    "dependencies": {
+        "purecss": "^3.0.0",
+        "swiper": "^11.2.6"
+    }
 }

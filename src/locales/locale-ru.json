@@ -8,11 +8,18 @@
     "about": {
         "title": "Обо мне",
         "description": "Привет, меня зовут Юлия, я фотограф в городе Харьков",
-        "photo": "/src/img/My_Photo.jpeg"
+        "photo": "img/My_Photo.jpeg"
     },
     "portfolio": {
         "title": "Портфолио",
-        "photos": ["2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"]
+        "photos": [
+            "img/slide/2.jpg",
+            "img/slide/3.jpg",
+            "img/slide/4.jpg",
+            "img/slide/5.jpg",
+            "img/slide/6.jpg",
+            "img/slide/7.jpg"
+        ]
     },
     "prices": {
         "title": "Прайс"

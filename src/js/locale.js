@@ -7,6 +7,8 @@ import { swiper } from "./slider.js";
 
 const translatation = { en, ru };
 
+const base = import.meta.env.BASE_URL;
+
 const sections = [
     "burger",
     "header",
@@ -51,7 +53,7 @@ export function translatePage(lang) {
                 if (item.className == `${el}__text`)
                     item.innerText = obj[el]["description"];
                 else if (item.className == `${el}__photo`)
-                    item.src = obj[el]["photo"];
+                    item.src = `${import.meta.env.BASE_URL}${obj[el]["photo"]}`;
             });
         } else if (el == "portfolio") {
             const title = document.querySelector(`.${el}__title`).childNodes;
@@ -69,7 +71,9 @@ export function translatePage(lang) {
                 const slide = document.createElement("div");
                 slide.classList.add("swiper-slide");
                 const photo = document.createElement("img");
-                photo.src = `/src/img/slide/${obj[el]["photos"][i]}`;
+                photo.src = `${import.meta.env.BASE_URL}${
+                    obj[el]["photos"][i]
+                }`;
                 slide.appendChild(photo);
                 slider.appendChild(slide);
             }
