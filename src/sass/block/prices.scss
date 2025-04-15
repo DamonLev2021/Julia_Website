@@ -2,7 +2,7 @@
 @use "/src/sass/base/mixins.scss" as *;
 
 .prices {
-    padding-top: 40px;
+    padding: 40px 0;
     &__title {
         display: flex;
         flex-direction: row;
@@ -45,6 +45,18 @@
             filter: blur(clamp(2px, 0.0625em, 6px));
         }
     }
+    &__dekor {
+        &_left {
+            transform: rotate(90deg);
+            left: 10px;
+            top: 1110px;
+        }
+        &_right {
+            transform: rotate(270deg);
+            right: 10px;
+            top: 1735px;
+        }
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -58,6 +70,15 @@
             padding: 15px;
             width: 350px;
             height: 350px;
+        }
+        &__dekor {
+            &_left {
+                left: 20px;
+                top: 1330px;
+            }
+            &_right {
+                top: 1755px;
+            }
         }
     }
 }
@@ -74,6 +95,16 @@
             padding: 20px;
             width: 450px;
             height: 450px;
+        }
+        &__dekor {
+            &_left {
+                left: 40px;
+                top: 1890px;
+            }
+            &_right {
+                top: 2400px;
+                right: 40px;
+            }
         }
     }
 }

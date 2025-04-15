@@ -1,0 +1,14 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.decor-top-left,
+.decor-bottom-right {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url("/src/img/decor.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+}
