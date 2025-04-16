@@ -1,11 +1,6 @@
 "use strict";
 
-import en from "../locales/locale-en.json";
-import ru from "../locales/locale-ru.json";
-
 import { swiper } from "./slider.js";
-
-const translatation = { en, ru };
 
 const base = import.meta.env.BASE_URL;
 
@@ -19,8 +14,9 @@ const sections = [
     "footer",
 ];
 
-export function translatePage(lang) {
-    const obj = translatation[lang];
+export async function translatePage(lang) {
+    const obj = await loadTranslations(lang);
+
     sections.forEach((el) => {
         if (el == "header") {
             const title = document.querySelector(`.${el}__items`).childNodes;
@@ -87,4 +83,15 @@ export function translatePage(lang) {
             });
         }
     });
+}
+
+async function loadTranslations(lang) {
+    const response = await fetch(
+        `${import.meta.env.BASE_URL}locales/locale-${lang}.json`,
+    );
+    if (!response.ok) {
+        console.error("Ошибка загрузки перевода:", response.statusText);
+        return {};
+    }
+    return await response.json();
 }

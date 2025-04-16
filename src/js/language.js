@@ -3,20 +3,24 @@
 import { translatePage } from "./locale";
 
 const languageElement = document.querySelector(".nav__lang");
-translatePage("en");
 
 let languageTitle;
-
 languageElement.childNodes.forEach((el) => {
     if (el.className == "title_h3") languageTitle = el;
 });
 
-languageElement.addEventListener("click", () => {
+async function init() {
+    await translatePage("en"); // начальный перевод
+}
+
+init();
+
+languageElement.addEventListener("click", async () => {
     if (languageTitle.innerText == "En") {
         languageTitle.innerText = "Ru";
-        translatePage("ru");
+        await translatePage("ru");
     } else {
         languageTitle.innerText = "En";
-        translatePage("en");
+        await translatePage("en");
     }
 });
