@@ -81,6 +81,39 @@ export async function translatePage(lang) {
                 if (text.className == "title_h2")
                     text.innerText = obj[el]["title"];
             });
+            const cards = document.querySelectorAll(
+                `.${el}__cards .prices__card`,
+            );
+
+            cards.forEach((card, index) => {
+                let nameOfCard = card.querySelector("h4.title_h4");
+
+                if (!nameOfCard) {
+                    // Если заголовка нет — создаем
+                    nameOfCard = document.createElement("h4");
+                    nameOfCard.classList.add("title_h4");
+                    card.appendChild(nameOfCard);
+                }
+
+                // В любом случае обновляем текст
+                nameOfCard.innerText = obj[el]["subtitle"];
+
+                let listItem = card.querySelector("ul.prices__list");
+                const data = obj[el]["cards"][index];
+
+                if (listItem) {
+                    listItem.innerHTML = "";
+                } else {
+                    listItem = document.createElement("ul");
+                    listItem.classList.add("prices__list");
+                    card.appendChild(listItem);
+                }
+                for (let key in data) {
+                    const li = document.createElement("li");
+                    li.innerText = data[key];
+                    listItem.appendChild(li);
+                }
+            });
         }
     });
 }

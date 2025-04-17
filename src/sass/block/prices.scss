@@ -19,6 +19,10 @@
         gap: 10px;
     }
     &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
         padding: 10px;
         width: 300px;
         height: 300px;
@@ -35,26 +39,15 @@
             0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
             0 0 0 0 rgba(255, 255, 255, 1);
         transition: all 400ms cubic-bezier(0.25, 1, 0.5, 1);
-        &:hover {
-            transform: scale(1.05); /* Увеличение карточки при наведении */
-            box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-                inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-                0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
-                0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
-                0 0 0 0 rgba(255, 255, 255, 1);
-            filter: blur(clamp(2px, 0.0625em, 6px));
-        }
-    }
-    &__dekor {
-        &_left {
-            transform: rotate(90deg);
-            left: 10px;
-            top: 1110px;
-        }
-        &_right {
-            transform: rotate(270deg);
-            right: 10px;
-            top: 1735px;
+        ul {
+            li {
+                font-family: "Roboto", sans-serif;
+                font-size: 16px;
+                font-weight: 400;
+                font-style: normal;
+                line-height: normal;
+                color: $color-text;
+            }
         }
     }
 }
@@ -70,14 +63,10 @@
             padding: 15px;
             width: 350px;
             height: 350px;
-        }
-        &__dekor {
-            &_left {
-                left: 20px;
-                top: 1330px;
-            }
-            &_right {
-                top: 1755px;
+            ul {
+                li {
+                    font-size: 20px;
+                }
             }
         }
     }
@@ -95,16 +84,6 @@
             padding: 20px;
             width: 450px;
             height: 450px;
-        }
-        &__dekor {
-            &_left {
-                left: 40px;
-                top: 1890px;
-            }
-            &_right {
-                top: 2400px;
-                right: 40px;
-            }
         }
     }
 }
