@@ -17,8 +17,8 @@ init();
 
 languageElement.addEventListener("click", async () => {
     if (languageTitle.innerText == "En") {
-        languageTitle.innerText = "Ru";
-        await translatePage("ru");
+        languageTitle.innerText = "UA";
+        await translatePage("ua");
     } else {
         languageTitle.innerText = "En";
         await translatePage("en");
